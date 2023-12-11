@@ -1,0 +1,89 @@
+﻿
+@model IEnumerable<Ville>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center border-dark border-2">
+    <h1 class="display-4">Liste des villes</h1>
+</div>
+<div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter une ville</button>
+</div>
+<br />
+<div>
+    <table id="myTable" class="table table-responsive table-bordered border-1">
+    <thead>
+        <tr>
+            <th width="5%">Id</th>
+            <th>Nom</th>
+            <th>Pays</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ville in Model)
+        {
+            <tr>
+                 <td>@ville.Id</td>
+                 <td>@ville.Nom</td>
+                 <td>@ville.Pays.Nom</td>
+                 <td></td>
+            </tr>
+        }
+        <tr>
+            <td>6</td>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ajout d'une ville</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>Nom de la ville </div>
+                <div>Pays </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
