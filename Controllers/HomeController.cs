@@ -21,7 +21,9 @@ namespace testDataGrid.Controllers
                 new Pays() { Id = 2, Nom = "France"},
                 new Pays() { Id = 3, Nom = "Algérie"},
                 new Pays() { Id = 4, Nom = "Espagne"},
-                new Pays() { Id = 5, Nom = "Royaume Unis"}
+                new Pays() { Id = 5, Nom = "Royaume Unis"},
+                new Pays() { Id = 6, Nom = "Allemagne"},
+                new Pays() { Id = 7, Nom = "Japon"}
             };
 
             List<Ville> listeVille = new List<Ville>()
@@ -31,7 +33,8 @@ namespace testDataGrid.Controllers
                 new Ville() { Id = 3, Nom = "Alger", Pays = listePays.ElementAt(2) },
                 new Ville() { Id = 4, Nom = "Montréal", Pays = listePays.ElementAt(0) },
                 new Ville() { Id = 5, Nom = "Laval", Pays = listePays.ElementAt(0) },
-                new Ville() { Id = 6, Nom = "Londre", Pays = listePays.ElementAt(4) }
+                new Ville() { Id = 6, Nom = "Londre", Pays = listePays.ElementAt(4) },
+                new Ville() { Id = 7, Nom = "Tokyo", Pays = listePays.ElementAt(6) }
             };
 
             return View(listeVille);

@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public string Nom { get; set; } = string.Empty;
-        public Pays? Pays { get; set; }
+        public Pays Pays { get; set; } = new Pays();
     }
 }
