@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public string Nom { get; set; } = string.Empty;
-        public Pays Pays { get; set; } = new Pays();
+        public int FK_IdPays { get; set; }
     }
 }

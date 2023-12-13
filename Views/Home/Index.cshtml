@@ -1,5 +1,4 @@
-﻿
-@model IEnumerable<Ville>
+﻿@model IEnumerable<Pays>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -10,7 +9,7 @@
 </div>
 <div>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter une ville</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter un Pays</button>
 </div>
 <br />
 <div>
@@ -18,52 +17,19 @@
     <thead>
         <tr>
             <th width="5%">Id</th>
-            <th>Ville</th>
             <th>Pays</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-
         @foreach (var ville in Model)
         {
             <tr>
                  <td>@ville.Id</td>
-                 <td>@ville.Nom</td>
-                    @{
-                        var nomPays ="";
-                        if (ville.Pays.Nom == null) nomPays = "N/A"; else nomPays = ville.Pays.Nom; 
-                     }
-                  <td>@nomPays</td>
-                  <td></td>
+                 <td>@ville.Nom</td>       
+                 <td></td>
             </tr>
         }
-        
-  
-        <tr>
-            <td>7</td>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data 2</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data 2</td>
-            <td></td>
-        </tr>
     </tbody>
 </table>
 </div>

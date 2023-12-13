@@ -1,43 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using testDataGrid.Context;
 using testDataGrid.Models;
 
 namespace testDataGrid.Controllers
 {
+
+
+
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly TestDataGridDbContext _dbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(TestDataGridDbContext dbContext)
         {
-            _logger = logger;
+            _dbContext = dbContext;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Pays> listePays = new List<Pays>()
-            {
-                new Pays() { Id = 1, Nom = "Canada"},
-                new Pays() { Id = 2, Nom = "France"},
-                new Pays() { Id = 3, Nom = "Algérie"},
-                new Pays() { Id = 4, Nom = "Espagne"},
-                new Pays() { Id = 5, Nom = "Royaume Unis"},
-                new Pays() { Id = 6, Nom = "Allemagne"},
-                new Pays() { Id = 7, Nom = "Japon"}
-            };
-
-            List<Ville> listeVille = new List<Ville>()
-            {
-                new Ville() { Id = 1, Nom = "Madrid", Pays = listePays.ElementAt(3) },
-                new Ville() { Id = 2, Nom = "Paris", Pays = listePays.ElementAt(1) },
-                new Ville() { Id = 3, Nom = "Alger", Pays = listePays.ElementAt(2) },
-                new Ville() { Id = 4, Nom = "Montréal", Pays = listePays.ElementAt(0) },
-                new Ville() { Id = 5, Nom = "Laval", Pays = listePays.ElementAt(0) },
-                new Ville() { Id = 6, Nom = "Londre", Pays = listePays.ElementAt(4) },
-                new Ville() { Id = 7, Nom = "Tokyo", Pays = listePays.ElementAt(6) }
-            };
-
-            return View(listeVille);
+            return View(await _dbContext.Pays.ToListAsync());
         }
 
         public IActionResult Privacy()
