@@ -6,9 +6,6 @@ using testDataGrid.Models;
 
 namespace testDataGrid.Controllers
 {
-
-
-
     public class HomeController : Controller
     {
         private readonly TestDataGridDbContext _dbContext;
@@ -19,6 +16,12 @@ namespace testDataGrid.Controllers
         }
 
         public async Task<IActionResult> Index()
+        {
+            return View(await _dbContext.Pays.ToListAsync());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(string inputPays)
         {
             return View(await _dbContext.Pays.ToListAsync());
         }

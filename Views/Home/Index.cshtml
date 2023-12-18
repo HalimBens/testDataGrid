@@ -42,13 +42,17 @@
                 <h5 class="modal-title" id="exampleModalLabel">Ajout d'un Pays</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <input class="form-control" id="inputPays" type="text" placeholder="Pays" aria-label="default input example">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-primary">Ajouter</button>
-            </div>
+           <form method="POST">
+                <div class="modal-body">
+                    <input class="form-control" id="inputPays" name="inputPays" type="text" placeholder="Pays" aria-label="default input example">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                </div>
+           </form>
+           
+           
         </div>
     </div>
 </div>
@@ -56,6 +60,7 @@
 <script>
 
     $("#exampleModal").on('hide.bs.modal', function () {
+        // Réinitialisation du champs Pays 
         document.getElementById("inputPays").value = "";
     });
     
