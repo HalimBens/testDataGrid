@@ -22,11 +22,11 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var ville in Model)
+        @foreach (var pays in Model)
         {
             <tr>
-                 <td>@ville.Id</td>
-                 <td>@ville.Nom</td>       
+                 <td>@pays.Id</td>
+                 <td>@pays.Nom</td>       
                  <td></td>
             </tr>
         }
@@ -51,8 +51,6 @@
                     <button type="submit" class="btn btn-primary">Ajouter</button>
                 </div>
            </form>
-           
-           
         </div>
     </div>
 </div>
